@@ -1,7 +1,7 @@
 bl_info = {
     "name": "ActionTables",
     "author": "Alejandro Alzate",
-    "version": (0, 1, 0),
+    "version": (0, 1),
     "blender": (4, 4, 3),
     "location": "View3D > Sidebar > Lua Export",
     "description": "Export keyframes to a Lua file",
