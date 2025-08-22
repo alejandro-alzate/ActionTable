@@ -1,10 +1,5 @@
 import bpy
 
-luals_doc = """
-
-"""
-
-
 def export_to_lua(filepath='/tmp/anim.lua', use_seconds=True, actions=None):
     print(f"[LuaExport] Exporting to {filepath}...")
     if actions is None:
