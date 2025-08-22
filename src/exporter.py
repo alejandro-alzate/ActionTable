@@ -1,5 +1,10 @@
 import bpy
 
+luals_doc = """
+
+"""
+
+
 def export_to_lua(filepath='/tmp/anim.lua', use_seconds=True, actions=None):
     print(f"[LuaExport] Exporting to {filepath}...")
     if actions is None:
@@ -16,7 +21,7 @@ def export_to_lua(filepath='/tmp/anim.lua', use_seconds=True, actions=None):
         return s.replace('\\', '\\\\').replace('"', '\\"')
 
     lines = []
-    lines.append('Animations = {')
+    lines.append('local Animations = {')
 
     for action in actions:
         print(f"[LuaExport] Processing action: {action.name}")
@@ -48,9 +53,15 @@ def export_to_lua(filepath='/tmp/anim.lua', use_seconds=True, actions=None):
             lines.append('\t\t},')
         lines.append('\t},')
 
-    lines.append('}')
+    lines.append('}\n\nreturn Animations')
 
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
 
     print(f"[LuaExport] Export finished: {filepath}")
+
+def register():
+    pass
+
+def unregister():
+    pass

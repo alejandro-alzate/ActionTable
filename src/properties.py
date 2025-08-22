@@ -20,7 +20,7 @@ class LE_PG_OutputSettings(bpy.types.PropertyGroup):
         name="Output File",
         description="Where to export the Lua file",
         subtype="FILE_PATH",
-        default="//anim.lua",
+        default="/tmp/anim.lua",
     )
 
 

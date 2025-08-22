@@ -116,3 +116,20 @@ class LE_OP_export_to_lua(bpy.types.Operator):
         self.report({'INFO'}, f"Exported {len(actions)} actions to {path}")
         print(f"[LuaExport] Exported {len(actions)} actions to {path}")
         return {'FINISHED'}
+
+
+# proper registration
+classes = (
+    LE_OP_add_path,
+    LE_OP_remove_path,
+    LE_OP_autofill,
+    LE_OP_export_to_lua,
+)
+
+def register():
+    for cls in classes:
+        bpy.utils.register_class(cls)
+
+def unregister():
+    for cls in reversed(classes):
+        bpy.utils.unregister_class(cls)
